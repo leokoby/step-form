@@ -1,5 +1,7 @@
 .main {
   width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
   height: 100vh;
   background-color: rgb(255, 255, 255);
   display: flex;
@@ -35,6 +37,16 @@
   border-radius: 50%;
   color: #fff;
 }
+.main .containerAside div .containerStep .bulletActive {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 20px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #5AD7FF;
+}
 .main .containerAside div .containerStep .stepInfo .stepNumber {
   color: #5AD7FF;
   font-size: 0.875rem;
@@ -43,4 +55,49 @@
   color: #FFF;
   font-size: 1rem;
   font-weight: 500;
+}
+.main .containerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.main .containerForm form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.main .containerForm form label {
+  display: flex;
+  flex-direction: column;
+  color: #272570;
+  font-weight: 400;
+  font-size: 1rem;
+}
+.main .containerForm form label input {
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #c6c6c6;
+  border-radius: 5px;
+}
+.main .containerForm form div {
+  display: flex;
+  gap: 10px;
+}
+.main .containerForm form div label input {
+  width: 250px;
+}
+.main .containerForm form button {
+  width: 100%;
+  max-width: 120px;
+  padding: 15px;
+  cursor: pointer;
+  background-color: #272570;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: all 200ms ease-in-out;
+}
+.main .containerForm form button:hover {
+  background-color: #1a184a;
 }/*# sourceMappingURL=page.module.css.map */
