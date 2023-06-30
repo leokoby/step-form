@@ -1,19 +1,13 @@
 "use client"
 import { useState } from 'react'
 import styles from './page.module.css'
-import {useForm} from 'react-hook-form'
+import InfoForm from './components/InfoForm/InfoForm'
+import Plans from './components/Plans/Plans'
+
 
 export default function Home() {
-  const [step, setStep] = useState(1)
-  const { register, handleSubmit } = useForm()
+  const [step, setStep] = useState(2)
 
-  const onSubmit = (data) => {
-    const {name, email, phonenumber, postalcode} = data
-    console.log(name, email, phonenumber, postalcode)
-    if(name && email && phonenumber && postalcode){
-      setStep(2)
-    }
-  }
 
   return (
     <main className={styles.main}>
@@ -40,33 +34,11 @@ export default function Home() {
               <p className={styles.stepName}>VERIFY YOUR INFORMATIONS</p>
             </span>
           </span>
-        </div>
+        </div>  
       </aside>
-      <div className={styles.containerForm}>
-        <h2>Personal Information</h2>
-        <small>Please  provide your name, email adress, phone number and your postal code.</small>
-        <form method='POST' onSubmit={handleSubmit(onSubmit)}>
-          <label htmlFor="name">
-            Name:
-            <input {...register("name", {required: true})} placeholder='digit your name'/>
-          </label>
-          <label htmlFor="email">
-            Email:
-            <input {...register("email",  {required: true})} placeholder='digit your email'/>
-          </label>
-          <div>
-            <label htmlFor="phone">
-              Phone number:
-              <input {...register("phonenumber",  {required: true})} placeholder='+000 000000-000'/>
-            </label>
-            <label htmlFor="postalcode">
-              Postal code:
-              <input {...register("postalcode",  {required: true})} placeholder='0000-000'/>
-            </label>
-          </div>
-          <button type='submit'>Next Step</button>
-        </form>
-      </div>
+      {step <= 1 ? <InfoForm setSate={setStep} /> : null}
+      {step == 2 ? <Plans /> : null}
+      
     </main>
   )
 }
