@@ -60,6 +60,21 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  max-width: 510px;
+}
+.main .containerForm .titlePlans {
+  color: #05235F;
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.main .containerForm .subtitlePlans {
+  color: #05235F;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 .main .containerForm form {
   display: flex;
