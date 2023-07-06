@@ -30,13 +30,15 @@
   gap: 10px;
 }
 .main .containerAside div .containerStep .bullet {
+  width: 30px;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 15px 20px;
-  border: 2px solid #fff;
+  border: 2px solid #dddddd;
   border-radius: 50%;
-  color: #fff;
+  color: #dddddd;
 }
 .main .containerAside div .containerStep .bulletActive {
   display: flex;
@@ -49,18 +51,25 @@
   background-color: #5AD7FF;
 }
 .main .containerAside div .containerStep .stepInfo .stepNumber {
-  color: #5AD7FF;
+  color: #73bbd3;
   font-size: 0.875rem;
 }
 .main .containerAside div .containerStep .stepInfo .stepName {
-  color: #FFF;
+  color: #c2c2c2;
   font-size: 1rem;
   font-weight: 500;
+}
+.main .containerAside div .containerStep .stepActive .stepName {
+  color: #FFF;
+}
+.main .containerAside div .containerStep .stepActive .stepNumber {
+  color: #5AD7FF;
 }
 .main .containerForm {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  width: 100%;
   max-width: 510px;
 }
 .main .containerForm .titlePlans {
@@ -116,4 +125,40 @@
 }
 .main .containerForm form button:hover {
   background-color: #1a184a;
+}
+
+@media (max-width: 1000px) {
+  .main {
+    flex-direction: column;
+    gap: 2%;
+    max-width: 90vw;
+  }
+  .main .containerAside {
+    width: 100%;
+  }
+  .main .containerAside div {
+    gap: 10px !important;
+  }
+  .main .containerAside div .containerStep .bullet {
+    width: 30px;
+    height: 30px;
+    padding: 5px 10px;
+  }
+  .main .containerAside div .containerStep .bulletActive {
+    padding: 5px 10px;
+    border: 2px solid #fff;
+  }
+  .main .containerAside div .containerStep .stepInfo .stepNumber {
+    font-size: 0.675rem;
+  }
+  .main .containerAside div .containerStep .stepInfo .stepName {
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  .containerForm form div {
+    flex-direction: column;
+  }
+  .containerForm form div label input {
+    width: 100% !important;
+  }
 }/*# sourceMappingURL=page.module.css.map */

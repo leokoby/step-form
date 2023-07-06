@@ -27,13 +27,15 @@
         align-items: center;
         gap: 10px;
         .bullet{
+          width: 30px;
+          height: 42px;
           display: flex;
           align-items: center;
           justify-content: center;
           padding: 15px 20px;
-          border: 2px solid #fff;
+          border: 2px solid #dddddd;
           border-radius: 50%;
-          color: #fff;
+          color: #dddddd;
         }
         .bulletActive{
           display: flex;
@@ -46,16 +48,25 @@
           background-color: #5AD7FF;
         }
 
+        
         .stepInfo{
           .stepNumber{
-            color: #5AD7FF;
+            color: #73bbd3;
             font-size: 0.875rem;
           }
           .stepName{
-            color: #FFF;
+            color: #c2c2c2;
             font-size: 1rem;
             font-weight: 500;
-
+            
+          }
+        }
+        .stepActive{
+          .stepName{
+            color: #FFF;
+          }
+          .stepNumber{
+            color: #5AD7FF;
           }
         }
       }
@@ -66,6 +77,7 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 100%;
     max-width: 510px;
 
     .titlePlans{
@@ -130,6 +142,55 @@
         }
       }
 
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .main{
+    flex-direction: column;
+    gap: 2%;
+    max-width: 90vw;
+
+    .containerAside{
+      width: 100%;
+      
+      div{
+        gap: 10px !important;
+        .containerStep{
+          .bullet{
+            width: 30px;
+            height: 30px;
+            padding: 5px 10px;
+          }
+          .bulletActive{
+            padding: 5px 10px;
+            border: 2px solid #fff;
+          }
+  
+          .stepInfo{
+            .stepNumber{
+              font-size: 0.675rem;
+            }
+            .stepName{
+              font-size: 0.875rem;
+              font-weight: 500;
+  
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .containerForm{
+    form{
+      div{
+        flex-direction: column;
+        label input{
+          width: 100% !important;
+        }
+      }
     }
   }
 }
