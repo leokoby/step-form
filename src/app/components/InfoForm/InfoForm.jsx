@@ -16,6 +16,11 @@ export default function InfoForm({setSate}) {
     }
   }
 
+  const Mask = () => {
+    const postalGetByID = document.getElementById('postalCode')
+    if(postalGetByID.value.length == 4) postalGetByID.value += '-'
+  }
+
   return (
     <div className={styles.containerForm}>
         <h2 className={styles.titlePlans}>Personal Information</h2>
@@ -27,16 +32,16 @@ export default function InfoForm({setSate}) {
           </label>
           <label htmlFor="email">
             Email:
-            <input {...register("email",  {required: true})} placeholder='exemple@exemple.com'/>
+            <input type='email'{...register("email",  {required: true})} placeholder='exemple@exemple.com'/>
           </label>
           <div>
             <label htmlFor="phone">
               Phone number:
-              <input {...register("phonenumber",  {required: true})} placeholder='+351999999999'/>
+              <input {...register("phonenumber",  {required: true})} maxLength={14} placeholder='+351123456789' id='phonenumber'/>
             </label>
             <label htmlFor="postalcode">
               Postal code:
-              <input {...register("postalcode",  {required: true})} placeholder='0000-000'/>
+              <input {...register("postalcode",  {required: true})} placeholder='0000-000' id='postalCode'  maxLength={8} onKeyUp={Mask}/>
             </label>
           </div>
           <button type='submit'>Next Step</button>
