@@ -2,11 +2,12 @@
 import { useState } from 'react'
 import styles from './page.module.css'
 import PersonalForm from './components/InfoForm/PersonalForm'
+import Plans from './components/Plans/Plans'
 
 
 
 export default function Home() {
-  const [step, setStep] = useState(1)
+  const [step, setStep] = useState(2)
 
   return (
     <main className={styles.main}>
@@ -16,7 +17,9 @@ export default function Home() {
           <button>Select a plan</button>
           <button>Verify your information</button>
         </nav>
-        <PersonalForm setState={setStep}/>
+        {step === 1 ? <PersonalForm setState={setStep}/> : null}
+        {step === 2 ? <Plans /> : null}
+        {/* {step === 1 ? <PersonalForm setState={setStep}/> : null} */}
       </div>
     </main>
   )
