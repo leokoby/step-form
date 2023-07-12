@@ -21,23 +21,23 @@ export default function PersonalForm({setState}) {
         <div>
           <label htmlFor="name">
             Name:
-            <input {...register("name")} id='name' placeholder='Adul yan'/>
+            <input {...register("name", { required: true })} id='name' placeholder='Adul yan'/>
           </label>
           <label htmlFor="email">
             Email:
-            <input {...register("email")} id='email' placeholder='exemple@exemple.com'/>
+            <input {...register("email", { required: true })} id='email' placeholder='exemple@exemple.com'/>
           </label>
           <label htmlFor="phone">
             Phone number:
-            <input {...register("phonenumber")} id='phone' placeholder='+351 999 888 777'/>
+            <input {...register("phonenumber", { required: true })} id='phone' placeholder='+351 999 888 777'/>
           </label>
           <label htmlFor="country">
             Country:
-            <input {...register("country")} id='country' placeholder='Portugal'/>
+            <input {...register("country", { required: true })} id='country' placeholder='Portugal'/>
           </label>
           <label htmlFor="postalcode">
             Postal code:
-            <input {...register("postalcode")} id='postalcode' placeholder='1234567'/>
+            <input {...register("postalcode", { required: true })} id='postalcode' placeholder='1234567'/>
           </label>
           <input type='submit' value={'Next Step'}/>
         </div>

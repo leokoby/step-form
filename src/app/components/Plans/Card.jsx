@@ -1,12 +1,14 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import style from './plans.module.css'
+import { contextPlans } from './Plans'
 
 export default function Cards() {
-  const [seletedElem, setSelectedElem] = React.useState('')
+  const {seletedElem, setSelectedElem} = useContext(contextPlans)
 
   const handleCardClick = (e) => {
     const idTarget = e.target.id || e.target.parentNode.id
-    setSelectedElem(idTarget)   
+    setSelectedElem(idTarget)
+    localStorage.setItem("plan", idTarget)
   }
 
   return (
@@ -17,11 +19,11 @@ export default function Cards() {
     </div>
     <div className={`${style.cardContainer} ${seletedElem === 'card-pro' ? style.cardActive : ''}`} onClick={handleCardClick} id="card-pro">
       <span>Pro</span>
-      <span>$10</span>
+      <span>$20</span>
     </div>
     <div className={`${style.cardContainer} ${seletedElem === 'card-business' ? style.cardActive : ''}`} onClick={handleCardClick} id="card-business">
       <span>Business</span>
-      <span>$10</span>
+      <span>$30</span>
     </div>
     
     </>
