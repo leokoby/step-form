@@ -34,7 +34,10 @@ export default function VerifyInfo() {
       </div>
       )
      : (
-      <h3 className={style.textSuccessSignature}>Congratulations! Your signature has been received!</h3>
+      <h3 className={style.textSuccessSignature}>
+        Congratulations! Your signature has been received!<br />                
+        We will get in touch with you shortly.
+        </h3>
      )}
     </>
   )

@@ -1,63 +1,85 @@
-.containerPlans .titlePlans {
-  color: #05235F;
-  font-size: 1.875rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+.containerPlans {
+  margin-top: 10%;
 }
-.containerPlans .subtitlePlans {
-  color: #05235F;
-  font-size: 1rem;
+.containerPlans h2 {
+  margin-bottom: 3%;
+}
+
+.wrapperPlanCards {
+  width: 100%;
+  display: flex;
+}
+.wrapperPlanCards .planCards {
+  width: 50%;
+}
+@media (max-width: 650px) {
+  .wrapperPlanCards {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .wrapperPlanCards .planCards {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.cardContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 10px;
+  width: 100%;
+  max-width: 250px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.cardContainer span {
+  color: #767676;
+  font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
-.containerPlans .containerPlansWrapper {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+
+.cardActive {
+  background-color: #FFF;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.32);
+  transition: all 200ms ease-in-out;
+  border: 1px solid #000;
 }
-.containerPlans .containerPlansWrapper .containerPlansCard {
-  width: 13.0625rem;
-  height: 17.5625rem;
-  margin-top: 40px;
-  flex-shrink: 0;
-  border-radius: 0.3125rem;
-  border: 1px solid #d6d6d6;
-  background: #FFF;
+.cardActive span {
+  color: #000;
+}
+
+.infoPlan {
+  height: 200px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  transition: all 200ms ease-in-out;
-  cursor: pointer;
+  justify-content: space-between;
 }
-.containerPlans .containerPlansWrapper .containerPlansCard:hover {
-  transform: translateY(-2px);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+.infoPlan ul {
+  list-style: circle;
 }
-.containerPlans .containerPlansWrapper .containerPlansCard span {
-  pointer-events: none;
-}
-.containerPlans .containerPlansWrapper .activeCard {
-  background: #05235F;
-  color: #FFF;
-  transform: scale(1.1);
-}
-.containerPlans button {
-  width: 100%;
-  max-width: 120px;
-  padding: 15px;
-  margin-top: 40px;
-  cursor: pointer;
-  background-color: #272570;
-  color: #fff;
-  font-weight: 500;
-  font-size: 1rem;
-  border: none;
+.infoPlan button {
+  height: 38px;
+  width: 120px;
+  background-color: transparent;
+  border: 1px solid #000;
   border-radius: 5px;
+  cursor: pointer;
   transition: all 200ms ease-in-out;
 }
-.containerPlans button:hover {
-  background-color: #1a184a;
+.infoPlan button:hover {
+  background-color: #000;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.32);
+  color: #fff;
+}
+@media (max-width: 650px) {
+  .infoPlan {
+    align-items: center;
+  }
 }/*# sourceMappingURL=plans.module.css.map */
